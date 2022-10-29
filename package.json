@@ -2,11 +2,14 @@
   "name": "mockpress-demo",
   "version": "1.0.0",
   "description": "demo webpage for mockpress package",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "build": "npx webpack build --env production",
-    "start": "npx webpack serve"
+    "start": "npx webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "mockpress.github.io",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -18,6 +21,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "babel-loader": "^9.0.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mockpress": "^0.1.1",
     "typescript": "^4.8.4",
