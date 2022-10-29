@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5", // 결과 파일 형식
+    "module": "es2015", // module 형식
+    "jsx": "react-jsx", // react import 안하고 사용 가능
+    "esModuleInterop": true, // import시 namespace alias 가능
+    "strict": true,
+    "strictNullChecks": false
+  },
+  "include": ["src"]
+}
