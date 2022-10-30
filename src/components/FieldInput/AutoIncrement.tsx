@@ -22,10 +22,14 @@ function AutoIncrement({
   }, []);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>startingPoint: </label>
-      <input type={"number"} value={startPoint} onChange={setParam} />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <div>
+        <label>startingPoint: </label>
+        <input type={"number"} value={startPoint} onChange={setParam} />
+      </div>
     </>
   );
 }

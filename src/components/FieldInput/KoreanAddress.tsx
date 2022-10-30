@@ -13,8 +13,10 @@ function KoreanAddress({
 
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
     </>
   );
 }

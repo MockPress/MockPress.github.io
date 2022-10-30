@@ -29,12 +29,18 @@ function Image({
   }, [size]);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>width: </label>
-      <input type={"number"} value={size.width} onChange={setWidth} />
-      <label>height: </label>
-      <input type={"number"} value={size.height} onChange={setHeight} />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <div>
+        <label>width: </label>
+        <input type={"number"} value={size.width} onChange={setWidth} />
+      </div>
+      <div>
+        <label>height: </label>
+        <input type={"number"} value={size.height} onChange={setHeight} />
+      </div>
     </>
   );
 }

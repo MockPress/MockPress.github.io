@@ -1,4 +1,5 @@
 import { ChangeEventHandler, useEffect, useState } from "react";
+import styled from "styled-components";
 
 const isValidDate = (date: unknown) => {
   return date && Object.prototype.toString.call(date) === "[object Date]";
@@ -47,22 +48,38 @@ function DateField({
   }, [range]);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>start date: </label>
-      <input
-        type={"date"}
-        value={dateToYYYYMMDD(range.startDate)}
-        onChange={setStartDate}
-      />
-      <label>end date:</label>
-      <input
-        type={"date"}
-        value={dateToYYYYMMDD(range.endDate)}
-        onChange={setEndDate}
-      />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <DateFieldContainer>
+        <div>
+          <label>start date: </label>
+          <input
+            type={"date"}
+            value={dateToYYYYMMDD(range.startDate)}
+            onChange={setStartDate}
+          />
+        </div>
+        <div>
+          <label>end date: </label>
+          <input
+            type={"date"}
+            value={dateToYYYYMMDD(range.endDate)}
+            onChange={setEndDate}
+          />
+        </div>
+      </DateFieldContainer>
     </>
   );
 }
 
 export default DateField;
+
+const DateFieldContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  input[type="date"] {
+    padding: 5px;
+  }
+`;

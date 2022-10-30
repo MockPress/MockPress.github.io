@@ -1,13 +1,13 @@
 import { ChangeEventHandler, useEffect, useState } from "react";
 
-function Text({
+function Integer({
   data,
   setFieldData,
 }: {
   data: { name: string; params: unknown[] };
   setFieldData: any;
 }) {
-  const [range, setRange] = useState({ min: 4, max: 8 });
+  const [range, setRange] = useState({ min: 0, max: 1000 });
   const setName: ChangeEventHandler<HTMLInputElement> = (e) => {
     setFieldData({ name: e.target.value });
   };
@@ -29,14 +29,20 @@ function Text({
   }, [range]);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>min: </label>
-      <input type={"number"} value={range.min} onChange={setMin} />
-      <label>max: </label>
-      <input type={"number"} value={range.max} onChange={setMax} />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <div>
+        <label>min: </label>
+        <input type={"number"} value={range.min} onChange={setMin} />
+      </div>
+      <div>
+        <label>max: </label>
+        <input type={"number"} value={range.max} onChange={setMax} />
+      </div>
     </>
   );
 }
 
-export default Text;
+export default Integer;

@@ -33,14 +33,22 @@ function Money({
   }, [range]);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>min: </label>
-      <input type={"number"} value={range.min} onChange={setMin} />
-      <label>max: </label>
-      <input type={"number"} value={range.max} onChange={setMax} />
-      <label>interval: </label>
-      <input type={"number"} value={range.interval} onChange={setInterval} />
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <div>
+        <label>min: </label>
+        <input type={"number"} value={range.min} onChange={setMin} />
+      </div>
+      <div>
+        <label>max: </label>
+        <input type={"number"} value={range.max} onChange={setMax} />
+      </div>
+      <div>
+        <label>interval: </label>
+        <input type={"number"} value={range.interval} onChange={setInterval} />
+      </div>
     </>
   );
 }

@@ -22,14 +22,18 @@ function KoreanName({
   }, []);
   return (
     <>
-      <label>name: </label>
-      <input type={"text"} value={data.name} onChange={setName} />
-      <label>gender: </label>
-      <select value={gender} onChange={setParam}>
-        <option value={""}>any</option>
-        <option value={"male"}>male</option>
-        <option value={"female"}>female</option>
-      </select>
+      <div>
+        <label>name: </label>
+        <input type={"text"} value={data.name} onChange={setName} />
+      </div>
+      <div>
+        <label>gender: </label>
+        <select value={gender} onChange={setParam}>
+          <option value={""}>any</option>
+          <option value={"male"}>male</option>
+          <option value={"female"}>female</option>
+        </select>
+      </div>
     </>
   );
 }
