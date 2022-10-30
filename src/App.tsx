@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Result from "./components/Result";
 import SchemaForm from "./components/SchemaForm";
 
 const personFieldTypes: Field[] = [
@@ -22,14 +23,9 @@ function App() {
       </Header>
       <Main>
         <SchemaForm defaultSchema={personFieldTypes} setResult={setResult} />
-        <Result>
-          <h2>Result</h2>
-          {!!result && (
-            <pre>
-              <code>{JSON.stringify(result, null, 2)}</code>
-            </pre>
-          )}
-        </Result>
+        <ResultContainer>
+          <Result result={result} />
+        </ResultContainer>
       </Main>
     </Container>
   );
@@ -65,6 +61,6 @@ const Main = styled.main`
   max-width: 1400px;
 `;
 
-const Result = styled.div`
+const ResultContainer = styled.div`
   width: 50%;
 `;
