@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import Result from "./components/Result";
 import SchemaForm from "./components/SchemaForm";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaNpm } from "@react-icons/all-files/fa/FaNpm";
 
 const personFieldTypes: Field[] = [
   { name: "id", type: "autoIncrement" },
@@ -20,6 +22,14 @@ function App() {
         <PageDescription>
           Mock data generator, simple and flexible.
         </PageDescription>
+        <LinkContainer>
+          <Link href="https://github.com/MockPress/mockpress">
+            <FaGithub />
+          </Link>
+          <Link href="https://www.npmjs.com/package/mockpress">
+            <FaNpm />
+          </Link>
+        </LinkContainer>
       </Header>
       <Main>
         <SchemaForm defaultSchema={personFieldTypes} setResult={setResult} />
@@ -43,8 +53,8 @@ const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  padding: 50px 0 30px;
+  gap: 25px;
+  padding: 50px 0 20px;
 `;
 
 const PageTitle = styled.h1`
@@ -53,6 +63,15 @@ const PageTitle = styled.h1`
 
 const PageDescription = styled.p`
   font-size: 1.5rem;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const Link = styled.a`
+  font-size: 24px;
 `;
 
 const Main = styled.main`
